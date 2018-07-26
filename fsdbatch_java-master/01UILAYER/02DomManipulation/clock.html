@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Clock Demo</title>
+</head>
+<body>
+
+    <div id="clock">
+       
+       
+    </div>
+    <p></p>
+    <p id="test"></p>
+    <h2 class = ></h2>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        setInterval(() =>{
+            var now = new Date();
+
+            var dateStr =  '<h2>Clock</h2><h3 id="clock">' +  now.getHours() + " : " + now.getMinutes() + " : " + now.getSeconds() + ' </h3>';
+            $('#clock').html(dateStr)    
+        }, 1000)
+    
+    </script>
+</body>
+</html>

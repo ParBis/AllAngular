@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Check Browser Support For Canvas - TKHTS.COM</title>
+<script src="../js/modernizr.js"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	if(Modernizr.canvas) {
+	  $("#unsupported").hide();
+	} else {
+	  $("#supported").hide;
+	}
+});
+</script>
+</head>
+<body>
+<p id="supported">Congratulations! Your browser supports canvas element</p>
+<p id="unsupported">Your browser does not support canvas element</p>
+
+</body>
+</html>

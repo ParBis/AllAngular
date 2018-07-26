@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output Element</title>
+</head>
+<body>
+    <form oninput="sum.value = parseInt(fn.value) + parseInt(sn.value)">
+        <input type="number" min="0" max="100" value="10" id="fn" step="38"><!--onchange="numberId.value = value"><output id="numberId">10</output>-->+
+        <input type="range" min="0" max="100" value="70" id="sn" onchange="rangeId.value = value"><output id="rangeId">70</output><br>
+        =<output id="sum">80</output>
+    </form>
+</body>
+</html>

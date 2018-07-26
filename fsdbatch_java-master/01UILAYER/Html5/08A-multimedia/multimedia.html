@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Multimedia Demos Powered by TKHTS.COM</title>
+</head>
+<body>
+<h1>Audio example:</h1>
+<audio controls>
+<source src="../audio/audio.mp3" type="audio/mp3"/>
+Your browser does not support the audio tag.
+</audio>
+<hr>
+<h1>Video example:</h1>
+
+<div style="text-align:center"> 
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br> 
+<video id="video1" width="320" controls>
+  <source src="../video/video.mp4" type="video/mp4"/>
+  Your browser does not support the video tag.
+</video>
+</div> 
+
+<script> 
+var myVideo=document.getElementById("video1"); 
+
+function playPause()
+{ 
+if (myVideo.paused) 
+  myVideo.play(); 
+else 
+  myVideo.pause(); 
+} 
+
+function makeBig()
+{ 
+myVideo.width=560; 
+} 
+
+function makeSmall()
+{ 
+myVideo.width=320; 
+} 
+
+function makeNormal()
+{ 
+myVideo.width=420; 
+} 
+</script> 
+
+
+<!-- 
+<video width="320" height="240" controls>
+  <source src="video/video.mp4" type="video/mp4"/>
+  Your browser does not support the video tag.
+</video>
+ -->
+
+</body>
+</html>

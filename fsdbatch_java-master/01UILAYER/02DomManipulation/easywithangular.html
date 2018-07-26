@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Angular Demo</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="AppCtrl">
+        <input type="text" placeholder="Search By Name" ng-model="search.$" />
+        <table>
+            <tr ng-repeat="employee in employees | filter: search">
+                <td>{{employee.first_name}}</td>
+                <td>{{employee.last_name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.ip_address}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+
+
+        app.controller('AppCtrl', function($scope, $http){
+            $http({
+                url: 'employees.json'
+            }).then((res)=>{
+                console.log(res.data)
+                $scope.employees = res.data
+            })
+        })
+
+    </script>
+</body>
+</html>

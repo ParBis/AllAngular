@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!--p>
+  home works!
+   
+</p-->
+ 
+
+<!--div class="form-group row">
+    <div class="col-xs-2">
+      <label>Name</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control" #todo (change)="0" type="text" placeholder="Enter Name!!"/>
+    </div>
+    <div class="col-xs-2">
+      <label>Age</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control input-sm" #todo1 (change)="0" type="text" placeholder="Enter Age!!"/>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-2">
+      <label>Contact</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control" #todo2 (change)="0" type="text" placeholder="Enter Contact!!"/>
+    </div>
+    <div class="col-xs-2">
+      <label>Email</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control input-sm" #todo3 (change)="0" type="email" placeholder="Enter Email!!"/>
+    </div>
+</div>
+
+<div class="form-group row">
+  <button class="btn btn-primary" (click) = "addTodo(todo.value, todo1.value, todo2.value, todo3.value)">Add Todo</button>
+</div-->
+
+
+<div class="form-group row">
+    <a routerLink = "/about">Add User</a>
+</div>
+
+  <div class="container">  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Sl. No</td>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Contact</td>
+          <td>Email</td>
+          <td>Action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos;let i = index">
+          <td>{{i}}</td>
+          <td><a (click)="editTodo(i)">{{todo.name}}</a></td>
+          <td>{{todo.age}}</td>
+          <td>{{todo.contact}}</td>
+          <td>{{todo.email}}</td>
+          <td><button class="btn-xs btn-danger" (click)="removeTodo(i)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  <!--ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todos;let i = index">
+        <span>
+            <p style="black">{{todo.text}}</p>
+            <p style="black">{{todo.text1}}</p>
+            <button class="btn btn-danger" (click)="removeTodo(i)">X</button>
+        </span>
+    </li>
+</ul-->
+
+  <!--ul class="list-group">
+      <li [ngClass]="getClassForItem(todo.isDone)" *ngFor="let todo of todos;let i = index">
+              <span>
+                  <p [ngStyle]= "{'color': getColor(todo.isDone)}">{{todo.text}}</p>
+                  {{todo.text1}}
+                  <button class="btn btn-danger" (click)="removeTodo(i)">X</button>
+              </span>
+          </li>
+  </ul-->
+
+
+<div>

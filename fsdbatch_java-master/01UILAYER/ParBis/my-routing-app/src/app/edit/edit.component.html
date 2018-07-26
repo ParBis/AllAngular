@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--p>
+  about works! |  {{city}}
+</p-->
+
+
+
+<div class="form-group row">
+    <div class="col-xs-2">
+      <label>Name</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control" #todo (change)="0" type="text" placeholder="Enter Name!!" value="{{todoObj.name}}"/>
+    </div>
+    <div class="col-xs-2">
+      <label>Age</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control input-sm" #todo1 (change)="0" type="text" placeholder="Enter Age!!" value="{{todoObj.age}}"/>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-xs-2">
+      <label>Contact</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control" #todo2 (change)="0" type="text" placeholder="Enter Contact!!" value="{{todoObj.contact}}"/>
+    </div>
+    <div class="col-xs-2">
+      <label>Email</label>
+    </div>
+    <div class="col-xs-4">
+      <input class="form-control input-sm" #todo3 (change)="0" type="email" placeholder="Enter Email!!" value="{{todoObj.email}}"/>
+    </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-xs-4"></div>
+  <div class="col-xs-2">
+    <button class="btn btn-primary" (click) = "updateTodo(todo.value, todo1.value, todo2.value, todo3.value)">Update User</button>
+  </div>
+  <div class="col-xs-2">
+    <button class="btn btn-primary" (click) = "backHome()">Back</button>
+  </div>
+  <div class="col-xs-4"></div>
+</div>
+
+
+

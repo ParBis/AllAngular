@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Drag And Drop- Powered by TKHTS.COM</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            float: left;
+            margin: 15px;
+            border: 1px solid black;
+        }
+
+        div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        section {
+            clear: both;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/modernizr.js"></script>
+    <script type="text/javascript">
+        function dragEnd(ev) {
+            ev.preventDefault();
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();  // Tell to Browser to do no event
+            ev.target.ondrop = null;
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+<h2>Match the images</h2>
+
+
+<section>
+
+    <table>
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td>
+                <div id="container_image_1">
+                    <img id="image_1" src="../image/image_1.jpg" draggable="true"
+                         ondragstart="drag(event)">
+                </div>
+
+            </td>
+            <td>
+                <div id="container_image_2">
+                    <img id="image_2" src="../image/image_2.jpg" draggable="true"
+                         ondragstart="drag(event)">
+                </div>
+
+            </td>
+            <td>
+                <div id="container_image_3">
+                    <img id="image_3" src="../image/image_3.jpg" draggable="true"
+                         ondragstart="drag(event)">
+                </div>
+
+            </td>
+            <td>
+                <div id="container_image_4">
+                    <img id="image_4" src="../image/image_4.jpg" draggable="true"
+                         ondragstart="drag(event)">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="imageDiv_1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                     ondragend="dragend(event)"></div>
+            </td>
+
+            <td>
+                <div id="imageDiv_2" ondrop="drop(event)" ondragover="allowDrop(event)"
+                     ondragend="dragend(event)"></div>
+            </td>
+            <td>
+                <div id="imageDiv_3" ondrop="drop(event)" ondragover="allowDrop(event)"
+                     ondragend="dragend(event)"></div>
+            </td>
+            <td>
+                <div id="imageDiv_4" ondrop="drop(event)" ondragover="allowDrop(event)"
+                     ondragend="dragend(event)"></div>
+            </td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th>
+                <lable>Singer</lable>
+            </th>
+            <th>
+                <lable>Hunger</lable>
+            </th>
+            <th>
+                <lable>True emotions</lable>
+            </th>
+            <th>
+                <lable>Fight to be alive</lable>
+            </th>
+
+        </tr>
+        </thead>
+
+    </table>
+</section>
+</body>
+</html>

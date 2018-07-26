@@ -1,0 +1,25 @@
+<div id="users">
+		<a class="btn btn-success float-right" routerLink="/user/-1">Add User</a>
+	<div class="row table-responsive">
+		<table class="table table-hover table-striped">
+			<tr class="bg-dark text-white">
+				<th>S.No.</th>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Contact</th>
+				<th>Email</th>
+				<th>Delete</th>
+			</tr>
+			<tr *ngFor="let user of users; let i = index;">
+				<td>{{i+1}}</td>
+				<td title="Edit">
+					<a routerLink="/user/{{i}}">{{user.name}}</a>
+				</td>
+				<td>{{user.age}}</td>
+				<td>{{user.contact}}</td>
+				<td>{{user.email}}</td>
+				<td><button class="btn btn-danger" (click)="deleteUser(i)">X</button></td>
+			</tr>
+		</table>
+	</div>
+</div>

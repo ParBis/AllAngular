@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TKHTS - SSE</title>
+    <style type="text/css">
+        #logo {
+            width: 65%;
+            background-color: cornFlowerBlue;
+            float: left;
+            margin-bottom: 100px;
+            padding: 10px;
+        }
+
+        aside {
+            width: 32%;
+            background-color: darkSeaGreen;
+            float: left;
+            margin-bottom: 100px;
+            text-align: right;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0px;
+            padding: 0px;
+            color: mintCream;
+        }
+
+        #notification {
+            text-align: center;
+        }
+
+        section {
+            width: 40%;
+            background: aliceblue;
+            height: auto;
+            font-size: 30px;
+            font-weight: bold;
+            border: 1px black solid;
+            margin: 150px auto;
+            padding: 20px 10px;
+            clear: both;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div id='logo'>
+        <h1>Techknow Heights Welcomes You</h1>
+    </div>
+    <aside>
+        <h1>
+            <span id="notification">Notifications</span>
+        </h1>
+    </aside>
+</header>
+
+<section>
+    Time sent by server: <output id="time"></output><br/>
+    <button onclick="start()">Start</button>
+</section>
+<script type="text/javascript">
+    var number_of_notifications = 0;
+    function start() {
+
+        var eventSource = new EventSource("HelloServlet");  // servlet
+
+        eventSource.onopen = function(){
+            /*          	alert("Connection established!"); */
+            number_of_notifications++;
+            console.log("Connection established! "+number_of_notifications);
+        };
+
+        eventSource.onmessage = function(event) {
+            document.getElementById('time').innerHTML = event.data;
+            if(number_of_notifications>1){
+                document.getElementById("notification").innerHTML = "You have "+number_of_notifications+" notifications";
+            }
+            else{
+                document.getElementById("notification").innerHTML = "You have "+number_of_notifications+" notification";
+            }
+
+        };
+    }
+</script>
+<footer>
+    <p style="font-size: 2em;"><b><i>Time is sent by server and each time server sends information, notification number is increased by one</i></b></p>
+</footer>
+</body>
+</html>

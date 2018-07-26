@@ -1,0 +1,14 @@
+/*.displayTable {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.thTd {
+    text-align: left;
+    padding: 8px;
+    height: 20px
+}
+
+.trid:nth-child(even){background-color: #f2f2f2}*/

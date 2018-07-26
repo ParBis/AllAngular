@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag And Drop- Powered by TKHTS.COM</title>
+    <link href="../css/webPageCss.css" rel="stylesheet"/>
+    <style type="text/css">
+        #page{
+            height:1000px;
+        }
+
+        .imageContainer
+        {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            float: left;
+            margin: 15px;
+            border: 1px solid black;
+        }
+
+
+        .imageContainer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        td > div{
+            margin: 0 auto;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function dragend(ev) {
+            ev.preventDefault();
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();  // Tell to Browser to do no event
+            ev.target.ondrop = null;
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+<div id="page">
+    <header>
+        <h1>My Web Page</h1>
+        <nav>
+            <a href="#" title="Forgot Password"><input type="button" value="Forgot Password"/></a>
+            <a href="#" title="Go to 'Login Page'"><input type="button" value="Login"/></a>
+        </nav>
+    </header> 	<!-- header is closed -->
+
+    <aside id="leftPane">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="#">Previous Score</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">MyAccount</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </aside>	<!-- left pane is closed -->
+
+    <section>
+
+        <p style="font-size: 24px;font-weight: bold">Question: Match the images</p>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_1" src="../image/image_1.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_2" src="../image/image_2.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_3" src="../image/image_3.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+                <td>
+                    <div class="imageContainer">
+                        <img id="image_4" src="../image/image_4.jpg" draggable="true"
+                             ondragstart="drag(event)">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    <lable>Singer</lable>
+                </th>
+                <th>
+                    <lable>Hunger</lable>
+                </th>
+                <th>
+                    <lable>True emotions</lable>
+                </th>
+                <th>
+                    <lable>Fight to be alive</lable>
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div class="imageContainer"
+                         id="imageDiv_1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+
+                <td>
+                    <div class="imageContainer" id="imageDiv_2" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+                <td>
+                    <div class="imageContainer" id="imageDiv_3" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+                <td>
+                    <div class="imageContainer" id="imageDiv_4" ondrop="drop(event)" ondragover="allowDrop(event)"
+                         ondragend="dragend(event)"></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <aside>
+            <button>Next Question</button>
+        </aside>
+    </section>	<!-- content area is closed -->
+
+    <footer>
+        <h3>Contact us:</h3>
+        <a href="mailto:JohnCarter@gmail.com" id="mail"><h4>JohnCarter@gmail.com</h4></a>
+        <h4>012-456789</h4>
+        <div id="pagination">
+            <ul>
+                <li><a href="#" title="first page">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#" title="last page">&raquo;</a></li>
+            </ul>
+        </div>
+    </footer>	<!-- footer is closed -->
+</div>
+</body>
+</html>

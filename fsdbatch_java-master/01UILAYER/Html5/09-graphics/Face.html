@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	  <style>
+		  canvas{
+			  border: 1px solid black;
+			  width: 90%;
+			  height: 400px;
+			  display: block;
+			  margin: 20px auto 10px;
+		  }
+	  </style>
+	  <title>Face in HTML</title>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+
+      // begin custom shape
+      ctx.beginPath();
+		ctx.moveTo(10,10);
+		ctx.bezierCurveTo(10,10,20,20,5,5);
+
+      // complete custom shape
+      ctx.closePath();
+      ctx.lineWidth = 5;
+      ctx.fillStyle = '#8ED6FF';
+      ctx.fill();
+      ctx.strokeStyle = 'blue';
+      ctx.stroke();
+    </script>
+  </body>
+</html>   

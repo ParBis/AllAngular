@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Canvas Line Width Demo- Powered by TKHTS.COM</title>
+</head>
+
+<body>
+	<button onclick="drawLineWidth()">Draw Canvas</button>
+	<br/>
+	<canvas id="myCanvas" width="350px" height="350px"></canvas>
+	
+	
+	<script type="text/javascript">
+		function drawLineWidth() {
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+			var offset = 40;
+			var width = 5;
+			var height = 5;
+//			var lineWidth = 1;
+//			var i = 0;
+			var centerX = canvas.width / 2;
+			var centerY = canvas.height / 2;
+			for (var i = 1; i < 10; i++) {
+				ctx.lineWidth = i;
+				ctx.strokeRect(centerX - (width / 2) - (i * offset / 2),
+					centerY - (height / 2) - (i * offset / 2),
+					width + (i * offset), height + (i * offset));
+			}
+		}
+		
+	</script>
+	
+</body>
+
+</html>

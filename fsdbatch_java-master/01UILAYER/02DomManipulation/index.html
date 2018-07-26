@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Dynamic Table</title>
+</head>
+
+<body>
+    <div>Populate the table here</div>
+    <div id="main"></div>
+
+    <button onclick="loadData()">Load Data</button>
+    <input type="text" placeholder="Search by Employee Name" id="search" onchange="searchEmployeeByName()" />
+
+    <script>
+        // 1. fetch the employee json with ajax
+
+        var emps = []
+        function searchEmployeeByName() {
+            console.log()
+            var searchStr = document.getElementById("search").value;
+            var employees = emps.filter(employee => {
+                return employee.first_name.startsWith(searchStr)
+            });
+            render(employees)
+        }
+
+        function loadData() {
+            fetch('employees.json')
+                .then((res) => res.json())
+                .then((employees) => {
+                    emps = employees
+                    console.log(employees)
+                    render(employees)
+                })
+        }
+
+        // 2. Populate the table
+
+        function render(list) {
+            console.log('In render', list)
+
+            var d = document,
+                main = d.getElementById('main'),
+                ul = d.createElement('ul'),
+                i;
+
+            main.appendChild(ul);
+
+
+            list.forEach((employee) => {
+                console.log(employee);
+                var li = d.createElement('li');               // create a new li element
+                li.textContent = employee.first_name;               // .textContent is mush shorter than creating a textNode
+                ul.appendChild(li);
+            });
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

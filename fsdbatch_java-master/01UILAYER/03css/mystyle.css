@@ -1,0 +1,19 @@
+p {
+    color: green
+}
+
+.warning {
+    color: yellow
+}
+
+p#error{
+    color: red
+}
+
+h2 {
+    padding-top: 100px;
+    border: 1px solid black;
+    border-top-color: red;
+    border-top-style: dotted;
+    margin: 100 50 25 10px
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>SoundEffect on Button- Powered by TKHTS.COM</title>
+<style type="text/css">
+nav#nav1{margin-top:24px;margin-left: auto;margin-right: auto;width: 500px;}
+nav#nav1 > a{background:#b9e1ff; color:#000; padding:10px;text-decoration:none;border-radius:5px;font-family:"Century", Gadget, sans-serif;}
+nav#nav1 > a:hover{background: #bbea00;}
+nav#nav1 > a:active{background: #eeffa8;}
+</style>
+<script>
+// Create new audio object instance
+var sound = new Audio();
+sound.src= "../audio/blip-blip.mp3";
+
+
+</script>
+</head>
+<body>
+	
+	<nav id="nav1">
+		<a href="#" onmousedown="sound.play()">Home</a>
+		<a href="#" onmousedown="sound.play()">About Us</a>
+		<a href="#" onmousedown="sound.play()">Services</a>
+		<a href="#" onmousedown="sound.play()">Contact</a>
+		
+
+	</nav>
+	
+	
+
+</body>
+</html>

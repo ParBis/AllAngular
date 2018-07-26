@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag and Drop Feature</title>
+    <style>
+        #container{
+            width: 50%;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="dragMe" src="../image/tkhts-logo.png" draggable="true" ondragstart="drag(event)">
+
+<script>
+    function drag(ev){
+        ev.dataTranser.setData("elementToBeDragged",ev.target.id);
+    }
+
+    function drop(ev){
+        ev.preventDefault();
+        var element = ev.dataTranser.getData("elementToBeDragged");
+        ev.target.appendChild(document.getElementById(element));
+    }
+
+    function allowDrop(ev){
+        ev.preventDefault();
+    }
+
+
+</script>
+</body>
+</html>

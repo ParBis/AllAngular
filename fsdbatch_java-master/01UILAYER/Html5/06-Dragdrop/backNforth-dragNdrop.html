@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#box1
+{width:200px; height:70px; margin:20px;padding:20px;border:3px solid magenta;}
+#box2
+{width:200px; height:70px; margin:20px;padding:20px;border:3px solid blue;}
+</style>
+<script>
+function whenDropped(eventPerformed)
+{
+eventPerformed.preventDefault();
+}
+
+function dragged(eventPerformed)
+{
+eventPerformed.dataTransfer.setData("Text",eventPerformed.target.id);
+}
+
+function dropped(eventPerformed)
+{
+eventPerformed.preventDefault();
+var data=eventPerformed.dataTransfer.getData("Text");
+eventPerformed.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<h2>Drag the image here and there:</h2>
+<div id="box1" ondrop="dropped(event)" ondragover="whenDropped(event)">
+  <img src="../image/tkhts-logo.png" draggable="true" ondragstart="dragged(event)" id="dragImg" width="200" height="70"></div>
+<div id="box2" ondrop="dropped(event)" ondragover="whenDropped(event)"></div>
+
+</body>
+</html>

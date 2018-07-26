@@ -1,0 +1,10 @@
+2018-Jul-09 15:42:02 PM [main] DEBUG org.hibernate.SQL - 
+    select
+        employee0_.id as id1_0_0_,
+        employee0_.name as name2_0_0_ 
+    from
+        Employee_1 employee0_ 
+    where
+        employee0_.id=?
+2018-Jul-09 15:42:02 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2018-Jul-09 15:42:02 PM [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_0_0_] : [VARCHAR]) - [Ravi]

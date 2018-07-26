@@ -1,0 +1,10 @@
+[
+    {
+        "text": "todo item 1",
+        "isDone": true
+    },
+    {
+        "text": "todo item 2",
+        "isDone": false
+    }
+]; 
