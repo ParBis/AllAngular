@@ -15,7 +15,7 @@
 	</c:if>
 	
 	<c:if test="${message == 'edit'}">
-		<form action="/SpringmvcAssignment/updatesubject" method="put">
+		<form action="/SpringmvcHibernateAssignment/updatesubject" method="put">
 	</c:if>
 	<c:if test="${message == 'add'}">
 		<form action="subject" method="post">

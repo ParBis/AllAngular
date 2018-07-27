@@ -15,15 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cts.entity.Employee;
-import com.cts.repository.EmployeeRepository;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin("*")
 public class EmployeeRestController {
 	
-	@Autowired
+	/*@Autowired
 	EmployeeRepository repository;
 	
 
@@ -34,7 +32,6 @@ public class EmployeeRestController {
 		System.out.println("Employees the REST controller");
 		System.out.println(employees);
 		return new ResponseEntity<List<Employee>>(employees, HttpStatus.OK);
-//	    return employees;
 	}
 	
 	@RequestMapping(path="/employee/{id}", method=RequestMethod.GET)
@@ -44,7 +41,6 @@ public class EmployeeRestController {
 		System.out.println("Employe the REST controller");
 		System.out.println(employee);
 		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
-//	    return employees;
 	}
 	
 	@RequestMapping(value = "/employee", method = RequestMethod.POST)
@@ -83,7 +79,7 @@ public class EmployeeRestController {
 		System.out.println("ID recieved : " + id);
 		repository.removeEmployee(id);
 		return new ResponseEntity<Void>(HttpStatus.GONE);
-	}
+	}*/
 
 
 

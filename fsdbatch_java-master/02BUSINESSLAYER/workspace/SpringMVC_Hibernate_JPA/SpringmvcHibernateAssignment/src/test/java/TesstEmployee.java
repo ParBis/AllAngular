@@ -1,23 +1,14 @@
 
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import com.cts.entity.Employee;
-import com.cts.repository.EmployeeRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-config.xml")
 public class TesstEmployee {
 
-	@Autowired
+	/*@Autowired
 	EmployeeRepository repo;
 	
 //	@Test
@@ -38,7 +29,7 @@ public class TesstEmployee {
 	
 //	@Test
 	public void testUpdatingEmployeeSalary() {
-		repo.updateEmployee(1, 30000d);
+		//repo.updateEmployee(1, 30000d);
 	}
 //	@Test
 	public void testFindingEmployeeByName() {
@@ -53,8 +44,7 @@ public class TesstEmployee {
 	@Test
 	public void testFindingEmployees() {
 		List<Employee> employees = repo.findEmployees();
-//		assertEquals("should return one emp with name", employees.size(), 1);
 	}
-	
+	*/
 
 }

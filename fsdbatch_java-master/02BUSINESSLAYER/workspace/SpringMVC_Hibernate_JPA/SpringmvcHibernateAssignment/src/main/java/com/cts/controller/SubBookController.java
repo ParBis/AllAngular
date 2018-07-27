@@ -1,29 +1,21 @@
 package com.cts.controller;
 
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cts.entity.Book;
-import com.cts.entity.Employee;
-import com.cts.repository.SubjectRepo;
-import com.cts.repository.EmployeeRepository;
 import com.cts.entity.Subject;
+import com.cts.repository.SubjectRepo;
 
 @Controller
 public class SubBookController {
@@ -31,29 +23,6 @@ public class SubBookController {
 	@Autowired
 	SubjectRepo repoSubject;
 
-	// DELETE START //
-	@Autowired
-	EmployeeRepository repository;
-	@RequestMapping(path="/employees", method=RequestMethod.GET)
-	public String fetchEmployees(Model model){
-		List<Employee> employees = repository.findEmployees();
-		System.out.println("Employees the controller");
-		System.out.println(employees);
-		model.addAttribute("employees", employees);
-		return "employees";
-	}
-	
-	@RequestMapping(path="/employee", method=RequestMethod.POST)
-	public String addEmployees(Model model,  @RequestParam(value="name", required=true) String name, 
-	    @RequestParam(value="salary", required=false) Double salary){
-		Employee employee = new Employee(name, salary);
-		repository.addEmployee(employee);
-		model.addAttribute("message", "Successfully added, " + employee.getName());
-		return "redirect:/employees";
-	}
-	
-	// DELETE END //
-	
 	
 	@RequestMapping(path="/subjects", method=RequestMethod.GET)
 	public String findSubjects(Model model){
